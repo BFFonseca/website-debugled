@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-led-dark text-led-light font-body;
+  }
+}
+
+@layer components {
+  .led-accent {
+    @apply text-led-green font-mono;
+  }
+  .nav-link {
+    @apply text-led-muted hover:text-led-green transition-colors duration-200 font-mono text-sm;
+  }
+  .section-title {
+    @apply font-display text-3xl font-bold text-led-light mb-2;
+  }
+  .card {
+    @apply bg-led-surface border border-gray-800 rounded-xl p-6 hover:border-led-green transition-colors duration-300;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-led-green text-led-dark font-mono font-medium px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity duration-200;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border border-led-green text-led-green font-mono font-medium px-5 py-2.5 rounded-lg hover:bg-led-green hover:text-led-dark transition-all duration-200;
+  }
+}

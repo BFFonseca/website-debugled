@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// This is a placeholder static route for the sample post.
+// Once you switch to Astro Content Collections, replace this with
+// getStaticPaths() pulling from src/content/blog/*.md
+
+const post = {
+  title: 'Hello World',
+  date: '2026-01-01',
+  description: 'The obligatory first post.',
+  tags: ['meta'],
+  body: `
+    <h2>Why this site?</h2>
+    <p>Write your story here. What made you start this? What do you want to document?</p>
+    <h2>What to expect</h2>
+    <ul>
+      <li>Project write-ups</li>
+      <li>Notes on things I'm learning</li>
+      <li>Occasional opinions</li>
+    </ul>
+    <p>More soon.</p>
+  `,
+};
+---
+
+<BaseLayout title={post.title} description={post.description}>
+  <article class="max-w-2xl">
+    <a href="/blog" class="font-mono text-sm text-led-muted hover:text-led-green transition-colors mb-8 inline-block">
+      ← back to blog
+    </a>
+
+    <header class="mb-10">
+      <div class="flex gap-2 mb-4">
+        {post.tags.map(tag => (
+          <span class="font-mono text-xs text-led-green border border-led-green px-2 py-1 rounded-full">
+            #{tag}
+          </span>
+        ))}
+      </div>
+      <h1 class="font-display text-4xl font-bold text-led-light mb-3">{post.title}</h1>
+      <time class="font-mono text-sm text-led-muted">{post.date}</time>
+    </header>
+
+    <div
+      class="prose prose-invert prose-green max-w-none
+             prose-headings:font-display prose-headings:text-led-light
+             prose-p:text-led-muted prose-p:leading-relaxed
+             prose-a:text-led-green prose-a:no-underline hover:prose-a:underline
+             prose-code:font-mono prose-code:text-led-green prose-code:bg-led-surface prose-code:px-1 prose-code:rounded
+             prose-li:text-led-muted"
+      set:html={post.body}
+    />
+  </article>
+</BaseLayout>

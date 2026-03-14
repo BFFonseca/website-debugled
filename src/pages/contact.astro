@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact" description="Get in touch with DebugLED.">
+  <h1 class="section-title text-4xl mb-2">Contact</h1>
+  <p class="led-accent text-sm mb-12">// get in touch</p>
+
+  <div class="max-w-xl">
+    <div class="card mb-8">
+      <p class="text-led-muted leading-relaxed mb-6">
+        Have a question, a project idea, or just want to say hi?
+        The best way to reach me is by email. I read everything.
+      </p>
+
+      <div class="flex flex-col gap-4 font-mono text-sm">
+        <!-- TODO: replace with your real contact details -->
+        <div class="flex items-center gap-3">
+          <span class="text-led-green w-20">email</span>
+          <a href="mailto:hello@debugled.dev" class="text-led-muted hover:text-led-green transition-colors">
+            hello@debugled.dev
+          </a>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-led-green w-20">github</span>
+          <a href="https://github.com/" target="_blank" rel="noopener" class="text-led-muted hover:text-led-green transition-colors">
+            github.com/debugled
+          </a>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-led-green w-20">twitter</span>
+          <a href="https://twitter.com/" target="_blank" rel="noopener" class="text-led-muted hover:text-led-green transition-colors">
+            @debugled
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p class="font-mono text-xs text-led-muted">
+      // response time: usually within 48h
+    </p>
+  </div>
+</BaseLayout>
