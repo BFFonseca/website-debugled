@@ -1,35 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  /* DebugLED brand palette */
+  --color-led-green:   #00FF94;
+  --color-led-dark:    #0A0E1A;
+  --color-led-surface: #111827;
+  --color-led-muted:   #6B7280;
+  --color-led-light:   #F3F4F6;
+
+  /* Fonts */
+  --font-mono:    "JetBrains Mono", monospace;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body:    "Inter", sans-serif;
+}
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-led-dark text-led-light font-body;
+    background-color: var(--color-led-dark);
+    color: var(--color-led-light);
+    font-family: var(--font-body);
   }
 }
 
 @layer components {
   .led-accent {
-    @apply text-led-green font-mono;
+    color: var(--color-led-green);
+    font-family: var(--font-mono);
   }
   .nav-link {
-    @apply text-led-muted hover:text-led-green transition-colors duration-200 font-mono text-sm;
+    color: var(--color-led-muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    transition: color 0.2s;
+  }
+  .nav-link:hover {
+    color: var(--color-led-green);
   }
   .section-title {
-    @apply font-display text-3xl font-bold text-led-light mb-2;
+    font-family: var(--font-display);
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--color-led-light);
+    margin-bottom: 0.5rem;
   }
   .card {
-    @apply bg-led-surface border border-gray-800 rounded-xl p-6 hover:border-led-green transition-colors duration-300;
+    background-color: var(--color-led-surface);
+    border: 1px solid #1f2937;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: border-color 0.3s;
+  }
+  .card:hover {
+    border-color: var(--color-led-green);
   }
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-led-green text-led-dark font-mono font-medium px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity duration-200;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-led-green);
+    color: var(--color-led-dark);
+    font-family: var(--font-mono);
+    font-weight: 500;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem;
+    transition: opacity 0.2s;
   }
+  .btn-primary:hover { opacity: 0.9; }
   .btn-outline {
-    @apply inline-flex items-center gap-2 border border-led-green text-led-green font-mono font-medium px-5 py-2.5 rounded-lg hover:bg-led-green hover:text-led-dark transition-all duration-200;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--color-led-green);
+    color: var(--color-led-green);
+    font-family: var(--font-mono);
+    font-weight: 500;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover {
+    background-color: var(--color-led-green);
+    color: var(--color-led-dark);
   }
 }
