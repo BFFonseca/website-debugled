@@ -9,22 +9,58 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="border-b border-gray-800 px-6 py-4">
+<header class="border-b px-6 py-4" style="border-color: var(--border); background-color: var(--bg);">
   <nav class="max-w-4xl mx-auto flex items-center justify-between">
-    <a href="/" class="font-mono font-medium text-led-green text-lg tracking-tight">
-      debug<span class="text-led-light">LED</span>
+    <a href="/" class="font-mono font-medium text-lg tracking-tight" style="color: var(--accent);">
+      debug<span style="color: var(--text);">LED</span>
     </a>
-    <ul class="flex items-center gap-6">
-      {navLinks.map(link => (
-        <li>
-          <a
-            href={link.href}
-            class={`nav-link ${currentPath === link.href ? 'text-led-green' : ''}`}
-          >
-            {link.label}
-          </a>
-        </li>
-      ))}
-    </ul>
+
+    <div class="flex items-center gap-6">
+      <ul class="flex items-center gap-6">
+        {navLinks.map(link => (
+          <li>
+            <a
+              href={link.href}
+              class={`nav-link ${currentPath === link.href ? 'active-link' : ''}`}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- Dark/Light mode toggle -->
+      <button
+        id="theme-toggle"
+        aria-label="Toggle light/dark mode"
+        class="font-mono text-xs px-3 py-1.5 rounded-lg border transition-all duration-200"
+        style="border-color: var(--border); color: var(--muted);"
+      >
+        <span id="theme-icon">☀️</span>
+      </button>
+    </div>
   </nav>
 </header>
+
+<style>
+  .active-link { color: var(--accent) !important; }
+</style>
+
+<script>
+  const html = document.documentElement;
+  const btn = document.getElementById('theme-toggle');
+  const icon = document.getElementById('theme-icon');
+
+  // Load saved preference, or default to dark
+  const saved = localStorage.getItem('theme');
+  if (saved === 'light') {
+    html.classList.add('light');
+    if (icon) icon.textContent = '🌙';
+  }
+
+  btn?.addEventListener('click', () => {
+    const isLight = html.classList.toggle('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    if (icon) icon.textContent = isLight ? '🌙' : '☀️';
+  });
+</script>
