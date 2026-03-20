@@ -5,12 +5,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="Home">
   <!-- Hero -->
   <section class="mb-20">
-    <p class="font-mono text-led-green text-sm mb-3">hello, world —</p>
-    <h1 class="font-display text-5xl font-bold text-led-light leading-tight mb-5">
-      I'm <span class="text-led-green">DebugLED</span>.<br />
+    <p class="font-mono t-accent text-sm mb-3">hello, world —</p>
+    <h1 class="font-display text-5xl font-bold t-text leading-tight mb-5">
+      I'm <span class="t-accent">DebugLED</span>.<br />
       I build things.
     </h1>
-    <p class="text-led-muted text-lg max-w-xl leading-relaxed mb-8">
+    <p class="t-muted text-lg max-w-xl leading-relaxed mb-8">
       Developer, maker, and occasional writer. This is where I document my projects,
       share what I learn, and keep an online presence that isn't LinkedIn.
     </p>
@@ -25,13 +25,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h2 class="section-title">About</h2>
     <p class="led-accent text-sm mb-6">// who I am</p>
     <div class="card max-w-2xl">
-      <p class="text-led-muted leading-relaxed mb-4">
-        <!-- TODO: write your bio here -->
+      <p class="t-muted leading-relaxed mb-4">
         Placeholder bio. Tell the world who you are, what you work on, and what
         you care about. Keep it human — this is your corner of the internet.
       </p>
-      <p class="text-led-muted leading-relaxed">
-        Currently working on: <span class="text-led-light">[ your current focus ]</span>.
+      <p class="t-muted leading-relaxed">
+        Currently working on: <span class="t-text">[ your current focus ]</span>.
       </p>
     </div>
   </section>
@@ -42,10 +41,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p class="led-accent text-sm mb-6">// tools I reach for</p>
     <div class="flex flex-wrap gap-2">
       {['JavaScript', 'TypeScript', 'Python', 'Astro', 'Tailwind CSS', 'Git'].map(skill => (
-        <span class="font-mono text-xs border border-gray-700 text-led-muted px-3 py-1.5 rounded-full hover:border-led-green hover:text-led-green transition-colors">
+        <span class="skill-tag font-mono text-xs px-3 py-1.5 rounded-full border t-muted b-border hover-accent transition-colors">
           {skill}
         </span>
       ))}
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .skill-tag:hover { border-color: var(--accent); }
+</style>

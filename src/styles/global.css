@@ -66,3 +66,14 @@
 .prose-content pre { background-color: var(--surface); border: 1px solid var(--border); border-radius: 0.5rem; padding: 1.25rem; overflow-x: auto; margin-bottom: 1.25rem; }
 .prose-content pre code { background: none; padding: 0; }
 .prose-content blockquote { border-left: 3px solid var(--accent); padding-left: 1rem; color: var(--muted); font-style: italic; margin-bottom: 1.25rem; }
+
+/* Theme-aware utility classes — use these instead of text-led-* */
+.t-text    { color: var(--text); }
+.t-muted   { color: var(--muted); }
+.t-accent  { color: var(--accent); }
+.t-bg      { background-color: var(--bg); }
+.t-surface { background-color: var(--surface); }
+.b-accent  { border-color: var(--accent); }
+.b-border  { border-color: var(--border); }
+.hover-accent:hover { color: var(--accent); }
+.group:hover .group-hover-accent { color: var(--accent); }
