@@ -1,8 +1,9 @@
 ---
 title: 'Hello World'
-date: '2026-01-01'
 description: 'The obligatory first post. Why I started this site and what to expect.'
+date: '2026-01-01'
 tags: ['meta']
+draft: false
 ---
 
 # Hello World
