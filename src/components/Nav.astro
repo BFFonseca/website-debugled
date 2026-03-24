@@ -6,7 +6,7 @@ const navLinks = [
   { href: '/contact',  label: '~/contact'  },
 ];
 
-const currentPath = Astro.url.pathname;
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
 
 <header class="border-b px-6 py-4" style="border-color: var(--border); background-color: var(--bg);">
@@ -33,7 +33,7 @@ const currentPath = Astro.url.pathname;
       <button
         id="theme-toggle"
         aria-label="Toggle light/dark mode"
-        class="font-mono text-xs px-3 py-1.5 rounded-lg border transition-all duration-200"
+        class="font-mono text-xs px-3 py-1.5 rounded-lg border transition-all duration-200 flex-shrink-0"
         style="border-color: var(--border); color: var(--muted);"
       >
         <span id="theme-icon">☀️</span>
