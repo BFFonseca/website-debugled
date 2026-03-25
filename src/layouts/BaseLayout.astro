@@ -19,6 +19,11 @@ const { title, description = 'DebugLED — personal site, projects & blog.' } = 
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} · DebugLED</title>
+    <!-- Prevent theme flash -->
+    <script is:inline>
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light') document.documentElement.classList.add('light');
+    </script>
   </head>
   <body class="min-h-screen flex flex-col">
     <Nav />
