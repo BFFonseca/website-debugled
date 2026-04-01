@@ -38,7 +38,11 @@ It also recommended some JavaScript frameworks but after asking it what the diff
 
 As you might have noticed by now, the website has several pages. The landing page, the Projects, Blog, and About pages, plus the Contact page on the footer. I have some more ideas for the future. But for now, this gives me plenty to work with.
 
+
 So I'll be mainly 	updating the website with:
+=============================================
+
+So I'll be mainly updating the website with:
 
 - Projects I'm working on and projects I've done in the past
 - Notes on things I'm learning and doing
