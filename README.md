@@ -78,3 +78,8 @@ For now, add a new `.astro` file under `src/pages/blog/` and a matching `.md` in
 - **Nav links**: `src/components/Nav.astro`
 - **Social links**: `src/components/Footer.astro`
 - **Projects**: `src/pages/projects.astro` → `projects` array
+
+
+# Disclaimer:
+
+This page and most of the files in this repository have been created by or with the help of AI. More precisely by Anthropic's Claude using the Sonnet 4.6 Extended model.
