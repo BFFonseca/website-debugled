@@ -7,11 +7,11 @@ draft: false
 ---
 Welcome to DebugLED. This is the first post and in it I will be telling you why I started this website and how.
 
-## Why this site?
+# Why this site?
 
 There are a couple of reasons I created this website.
 
-### 1. I wanted a website
+## 1. I wanted a website
 
 As simple as that. I felt the need to have somewhere to share my projects and my thoughts.
 
@@ -19,7 +19,7 @@ And let's be honest, having a website looks good on any curriculum.
 
 I think of it as my dev/engineering portfolio.
 
-### 2. I've been meaning to try Anthropic's Claude for a while now.
+## 2. I've been meaning to try Anthropic's Claude for a while now.
 
 So far I've been mostly using ChatGPT with VS Code's Copilot and I have to say... as a firmware and embedded dev, I'm not very surprised by it.
 
@@ -34,13 +34,9 @@ This, plus the fact that I wanted to get the page up and running as fast as poss
 
 It also recommended some JavaScript frameworks but after asking it what the difference was between those and Static Site Generators, it sounded like Astro is what I want. So far I have not been disappointed.
 
-## What to expect
+# What to expect
 
 As you might have noticed by now, the website has several pages. The landing page, the Projects, Blog, and About pages, plus the Contact page on the footer. I have some more ideas for the future. But for now, this gives me plenty to work with.
-
-
-So I'll be mainly 	updating the website with:
-=============================================
 
 So I'll be mainly updating the website with:
 
@@ -48,7 +44,7 @@ So I'll be mainly updating the website with:
 - Notes on things I'm learning and doing
 - Occasional opinions on... anything really? Mostly tech
 
-## What's next?
+# What's next?
 
 Oh, a lot. There are a ton of old projects I want to write about and quite some more I want to start.
 
