@@ -17,7 +17,7 @@ A big reason for this is that I've been trying to get away from social media as 
 
 So, for me, there's only one answer to avoid (most of) these issues: ***I'll just do it myself!***
 
-![1778523520536](image/project-debugled/1778523520536.gif)
+![Fine, I'll do it myself](media/1778523520536.gif)
 
 Well, kinda. I had some help.
 
