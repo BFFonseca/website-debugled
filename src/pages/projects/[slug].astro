@@ -5,7 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
   return projects.map((project) => ({
-    params: { slug: project.id },
+    params: { slug: project.id.split('/').pop()?.replace(/\.md$/, '') },
     props: { project },
   }));
 }
@@ -71,7 +71,7 @@ const relatedPosts = blogPosts.filter((post) => {
             <ul class="space-y-4">
               {relatedPosts.map((post: any) => (
                 <li>
-                  <a href={`/blog/${post.id}`} class="block group">
+                  <a href={`/blog/${post.id.split('/').pop()?.replace(/\.md$/, '')}`} class="block group">
                     <h4 class="font-medium text-sm group-hover-accent transition-colors t-text mb-1">
                       {post.data.title}
                     </h4>

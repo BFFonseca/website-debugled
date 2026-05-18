@@ -14,7 +14,7 @@ const projects = await getCollection('projects');
       {projects.map(project => (
         <div class="card group">
           <div class="flex items-start justify-between gap-4 mb-3">
-            <a href={`/projects/${project.id}`}>
+            <a href={`/projects/${project.id.split('/').pop()?.replace(/\.md$/, '')}`}>
               <h2 class="font-display text-xl font-semibold t-text group-hover-accent transition-colors">
                 {project.data.title}
               </h2>
