@@ -33,10 +33,10 @@ const posts = allPosts.sort(
                 <p class="t-muted text-sm leading-relaxed mb-4">
                   {post.data.description}
                 </p>
-                <div class="flex gap-2">
+                <div class="flex flex-wrap gap-2">
                   {post.data.tags.map((tag) => (
-                    <span class="font-mono text-xs t-muted b-border border px-2 py-1 rounded">
-                      #{tag}
+                    <span class="whitespace-nowrap font-mono text-xs t-muted b-border border px-2 py-1 rounded">
+                      {tag}
                     </span>
                   ))}
                 </div>
