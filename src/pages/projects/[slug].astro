@@ -1,0 +1,94 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+
+// Fetch all blog posts
+const blogPosts = await getCollection('blog');
+
+// Filter blog posts that have this project's relatedTag
+const relatedPosts = blogPosts.filter((post) => {
+  return project.data.relatedTag && post.data.tags?.includes(project.data.relatedTag);
+});
+---
+
+<BaseLayout title={project.data.title} description={project.data.description}>
+  <div class="mb-20">
+    <a href="/projects" class="text-sm font-mono t-muted hover-accent transition-colors mb-8 inline-block">
+      ← back to projects
+    </a>
+
+    <div class="flex flex-col lg:flex-row gap-12 mt-4">
+      {/* Main Content (Project Details) */}
+      <article class="flex-grow lg:w-2/3">
+        <h1 class="section-title text-4xl mb-4">{project.data.title}</h1>
+        
+        <div class="flex flex-wrap gap-2 mb-8">
+          {project.data.tags.map((tag: string) => (
+            <span class="font-mono text-xs t-muted b-border border px-2 py-1 rounded">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div class="prose prose-invert max-w-none">
+          <Content />
+        </div>
+
+        {(project.data.repo || project.data.live) && (
+          <div class="mt-8 pt-8 border-t border-[var(--color-border)] flex gap-4 font-mono text-sm">
+            {project.data.repo && (
+                <a href={project.data.repo} target="_blank" rel="noopener" class="t-accent hover:underline">
+                  GitHub Repo ↗
+                </a>
+            )}
+            {project.data.live && (
+                <a href={project.data.live} target="_blank" rel="noopener" class="t-accent hover:underline">
+                  Live View ↗
+                </a>
+            )}
+          </div>
+        )}
+      </article>
+
+      {/* Sidebar: Related Blog Posts */}
+      <aside class="lg:w-1/3 mt-12 lg:mt-0 lg:pl-6 lg:border-l lg:border-[var(--color-border)] opacity-80 hover:opacity-100 transition-opacity">
+        <div class="">
+          <p class="text-sm font-semibold mb-4 t-muted font-display uppercase tracking-wider">
+            Blog posts about this project
+          </p>
+          {relatedPosts.length > 0 ? (
+            <ul class="space-y-4">
+              {relatedPosts.map((post: any) => (
+                <li>
+                  <a href={`/blog/${post.id}`} class="block group">
+                    <h4 class="font-medium text-sm group-hover-accent transition-colors t-text mb-1">
+                      {post.data.title}
+                    </h4>
+                    <time class="text-[0.65rem] t-muted font-mono block">
+                      {post.data.date}
+                    </time>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p class="text-xs t-muted italic">
+              No related blog posts yet.
+            </p>
+          )}
+        </div>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
