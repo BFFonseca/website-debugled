@@ -7,7 +7,7 @@ live: ''
 status: 'active'
 relatedTag: 'project-debugled'
 ---
-# Start with why?
+# Start with why
 
 For the past few years, a though has been forming in my head. The more I thought about it, the more I realized I wanted a dedicated space to share my work. A place where I could share my projects and ideas without constraints.
 
@@ -23,7 +23,7 @@ Well, kinda. I had some help.
 
 # The Solution
 
-As I detailed in my first blogpost, this website servers both as a way to create a portfolio for my personal projects and to try out Anthropic's Claude's toolset.
+As I detailed in my [first blog post](/blog/hello-debugled), this website servers both as a way to create a portfolio for my personal projects and to try out Anthropic's Claude's toolset.
 
 I don't know much about front-end development, so creating a website would - even with my coding experience - require weeks if not months of learning new languages and tools to create a functional website. And being a 100% software project (which is not very common for me), made it a very strong candidate to finally try out Claude.
 
